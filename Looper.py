@@ -17,13 +17,14 @@ def list(start,stop,size):
                 cur = []   
                 for y in l:
                     cur.append(y)
-                print(f"c>{cur}")
+                #print(f"c>{cur}")
                 cur.append(z)
                 nxt.append(cur)
     
         full = nxt
         #print(f"f>{full}")
     return full
+
 
 # turn a number in to a list of bits with a given base.    
 # options:
@@ -42,4 +43,5 @@ def value_to_list(start, stop, value):
     list.append(iter)        
     
     return list
-        
+
+
