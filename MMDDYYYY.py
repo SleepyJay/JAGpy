@@ -1,5 +1,5 @@
 
-from datetime import timedelta,datetime,date 
+from datetime import timedelta, datetime, date
 
 '''This is a bunch of sugar around date time stuff.'''
 # Without this sugar, though, I kept mixing stuff up everywhere. This helped greatly to clarify.
