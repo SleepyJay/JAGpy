@@ -1,11 +1,11 @@
 
 
-# only does 0-1 x 3 (for reference)
-def list_01_by_3():
+# only does size 3 (for reference)
+def loop_to_3(stop=2):
     boring = []
-    for x in range(0, 2):
-        for y in range(0, 2):
-            for z in range(0, 2):
+    for x in range(0, stop):
+        for y in range(0, stop):
+            for z in range(0, stop):
                 boring.append([x, y, z])
 
     return boring

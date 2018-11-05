@@ -1,54 +1,70 @@
 
 """Generic looping"""
 
+
 #
-def list(start,stop,size):
-    full = []
-        
-    for x in range(start, stop):
-        full.append([x])
-    
-#    print('123')
-    
-    nxt = []
-    for i in range(0, size-1):
-        nxt = []
-        for z in range(start, stop):
-            for l in full: 
-                cur = []   
-                for y in l:
-                    cur.append(y)
-                #print(f"c>{cur}")
-                cur.append(z)
-                nxt.append(cur)
-    
-        full = nxt
-        #print(f"f>{full}")
+def combos(start, stop, size):
+    full = map(lambda x: [x], range(start, stop))
+
+    for i in range(0, size - 1):
+        full = combo_step(start, stop, full)
+
     return full
 
 
-# turn a number in to a list of bits with a given base.    
-# options:
-    # start, stop, value: the list is normalized up to the range given (# needs better words)
-    # stop, value: go from 0 to base in the "bits" 
-def value_to_list(start, stop, value):
-    list = []
-    
-    base = stop-start
+#
+def combo_step(start, stop, items):
+    my_step = []
+
+    # [ [1,1], [0,1], ...]
+    for item in items:
+        # [1,1]
+        for z in range(start, stop):
+            cur = []
+            # make copy of existing
+            for x in item:
+                cur.append(x)
+            # add from the range
+            cur.append(z)
+
+            my_step.append(cur)
+
+    return my_step
+
+
+# Turn a number in to a list of "bits" of a given base.
+def value_to_list(base, value, size=None):
+    my_list = []
+    high = base-1
+
     iter = value
-    while iter > base:
+    while iter > high:
          res = divmod(iter, base)
          iter = res[0]
-         list.append(res[1])
+         my_list.append(res[1])
     
-    list.append(iter)        
+    my_list.append(iter)
+
+    if size:
+        while len(my_list) < size:
+            my_list.append(0)
+
+    my_list.reverse()
     
-    return list
+    return my_list
 
-def blar(self):
-    pass
 
-if __name__ == '__main__':
-    my_list = list(0,1,3)
-    print(my_list)
+#
+def list_to_value(base, my_list):
+    my_list.reverse()
+
+    val = 0
+    mul = 1
+
+    for x in my_list:
+        val += (x * mul)
+        mul *= base
+
+    return val
+
 
