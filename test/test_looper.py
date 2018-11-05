@@ -1,8 +1,10 @@
 import unittest
-import Looper
+#import Looper
 from collections import Counter
-from test.helpers import list_01_by_3
+from helpers import list_01_by_3
 
+import importlib
+importlib.import_module('Looper')
 
 class Test_Looper(unittest.TestCase):
     #
@@ -14,4 +16,5 @@ class Test_Looper(unittest.TestCase):
         self.assertEqual(Counter(map(str,items)), Counter(map(str,boring)))
 
 
-
+if __name__ == '__main__':
+    unittest.main(verbosity=2)

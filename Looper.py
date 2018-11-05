@@ -1,6 +1,7 @@
 
 """Generic looping"""
 
+gfgs
 
 #
 def list(start,stop,size):
@@ -8,6 +9,8 @@ def list(start,stop,size):
         
     for x in range(start, stop):
         full.append([x])
+    
+    print('123')
     
     nxt = []
     for i in range(0, size-1):
