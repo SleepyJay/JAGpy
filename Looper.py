@@ -1,8 +1,6 @@
 
 """Generic looping"""
 
-gfgs
-
 #
 def list(start,stop,size):
     full = []
@@ -10,7 +8,7 @@ def list(start,stop,size):
     for x in range(start, stop):
         full.append([x])
     
-    print('123')
+#    print('123')
     
     nxt = []
     for i in range(0, size-1):
@@ -47,4 +45,10 @@ def value_to_list(start, stop, value):
     
     return list
 
+def blar(self):
+    pass
+
+if __name__ == '__main__':
+    my_list = list(0,1,3)
+    print(my_list)
 
