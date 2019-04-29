@@ -2,8 +2,8 @@
 
 import unittest
 from collections import Counter
-import JAGpy.Looper as Looper
-from JAGpy.tests.helpers import loop_to_3
+from JAGpy import Looper
+from tests.helpers import loop_to_3
 
 
 class TestLooper(unittest.TestCase):
@@ -16,7 +16,7 @@ class TestLooper(unittest.TestCase):
 
     #
     def test_value_to_list(self):
-        self.assertEqual(Looper.value_to_list(2, 3), [1, 1] )
+        self.assertEqual(Looper.value_to_list(2, 3), [1, 1])
         self.assertEqual(Looper.value_to_list(2, 3, 3), [0, 1, 1])
         self.assertEqual(Looper.value_to_list(2, 5), [1, 0, 1])
         self.assertEqual(Looper.value_to_list(2, 34), [1, 0, 0, 0, 1, 0])
@@ -31,7 +31,7 @@ class TestLooper(unittest.TestCase):
 
     #
     def test_list_to_value(self):
-        self.assertEqual(Looper.list_to_value(2, [1, 1]), 3 )
+        self.assertEqual(Looper.list_to_value(2, [1, 1]), 3)
         self.assertEqual(Looper.list_to_value(2, [0, 1, 1]), 3)
         self.assertEqual(Looper.list_to_value(2, [1, 0, 1]), 5)
         self.assertEqual(Looper.list_to_value(2, [1, 0, 0, 0, 1, 0]), 34)
