@@ -6,6 +6,7 @@ from JAGpy.Structs import lookup
 
 class Test_Structs(unittest.TestCase):
     def test_lookup(self):
+        
 
         my_set = {1, 2, 3}
         self.assertEqual(lookup(my_set, 1), True, 'Lookup (1) for set ok')
@@ -13,7 +14,7 @@ class Test_Structs(unittest.TestCase):
         self.assertEqual(lookup(my_set, 4, 'blah'), 'blah', 'Lookup() for missing with if none for set ok')
 
         my_list = [4, 5, 6]
-        self.assertEqual(lookup(my_list, 4), 4, 'Lookup (1) for list ok')
+        self.assertEqual(lookup(my_list, 2), 6, 'Lookup (1) for list ok')
         self.assertEqual(lookup(my_list, 4), None, 'Lookup() for None for list ok')
         self.assertEqual(lookup(my_list, 4, 'blah'), 'blah', 'Lookup() for missing with if none for list ok')
 

@@ -4,14 +4,29 @@
 #
 def lookup(collection, key, if_none=None):
     """Lookup key in collection; if not found return if_none (or None)"""
-    if key in collection:
+    
+    if isinstance(collection, list):
+        try:
+            val = collection[key] 
+            return val
+        except IndexError:
+            return if_none
+        
+    elif key in collection:
         if isinstance(collection, set):
-            return True
+            return key
         else:
             return collection[key]
     else:
         return if_none
 
+#
+def has_item(collection, key, if_none=None):
+    """Lookup key in collection; if not found return if_none (or None)"""
+    if key in collection:
+        return True
+    else:
+        return if_none
 
 #
 def lookup_any(collection, keys, if_none=None):
