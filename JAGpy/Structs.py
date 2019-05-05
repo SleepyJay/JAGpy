@@ -5,7 +5,7 @@
 def lookup(collection, key, if_none=None):
     """Lookup key in collection; if not found return if_none (or None)"""
     
-    if isinstance(collection, list):
+    if isinstance(collection, list) or isinstance(collection, tuple):
         try:
             val = collection[key] 
             return val
@@ -20,6 +20,7 @@ def lookup(collection, key, if_none=None):
     else:
         return if_none
 
+
 #
 def has_item(collection, key, if_none=None):
     """Lookup key in collection; if not found return if_none (or None)"""
@@ -27,6 +28,7 @@ def has_item(collection, key, if_none=None):
         return True
     else:
         return if_none
+
 
 #
 def lookup_any(collection, keys, if_none=None):
