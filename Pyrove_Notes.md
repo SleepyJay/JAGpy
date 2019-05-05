@@ -37,7 +37,7 @@ So instead, this module tries to make things a little easier. Use it to run a se
 	# ...same, but passing "safe" into each
 	$ python Foo/test.py safe
 
-Now, I grant that this is probably only useful in development--and specifically when you don't have paths set up or IDEs like Pycharm, or whatever. But it certainly allows me to write in a README for anyone coming across my Git to run `python Foo/test.py`, which is pretty simple. 
+Now, I grant that this is probably only useful in development--and specifically when you don't have paths set up or IDEs like Pycharm, or whatever. This is is also important in some editors (I'm looking at YOU, Pythonista) that seem to have trouble setting interpreter options. The `test.py` code tends to just work in these as well. Lastly, it allows me to suggest to anyone coming across my Git to simply test with`python Foo/test.py`, which is pretty simple. 
 
 ## Set up
 For this to work, you need two things:
