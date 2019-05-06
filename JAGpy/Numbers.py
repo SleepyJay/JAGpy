@@ -20,3 +20,17 @@ def is_int(val):
         return False
     else:
         return True
+
+
+def intify(val):
+    """When passed a number-like string, give me back a real number"""
+    try:
+        num = int(val)
+        return num
+
+    except TypeError:
+        return val
+
+    except ValueError:
+        return val
+
