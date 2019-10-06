@@ -34,3 +34,17 @@ def intify(val):
     except ValueError:
         return val
 
+
+def bin_to_int(b):
+    digits = list(b)
+
+    i = 0
+    val = 0
+    while digits:
+        d = int(digits.pop())
+
+        val += d * pow(2, i)
+        i += 1
+
+    return val
+
